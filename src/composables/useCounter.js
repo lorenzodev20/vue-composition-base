@@ -1,7 +1,7 @@
 import { ref } from 'vue'
 
-const useConter = () => {
-    const counter = ref(5)
+const useCounter = ( initValue = 5) => {
+    const counter = ref(initValue)
     return {
       counter,
       increase: () => counter.value++,
@@ -9,4 +9,4 @@ const useConter = () => {
     }
 }
 
-export default useConter
+export default useCounter
