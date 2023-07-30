@@ -6,14 +6,6 @@
             <slot name="header"/>
             <slot name="body"/>
             <slot name="footer"/>
-            <!-- <slot name="exposed" :newTitle="newTitle"></slot> -->
-            <!-- 
-            <slot>
-              <div class="center">
-                Sin contenido
-              </div>
-            </slot>
-            -->
         </div>
     </div>
 </template>

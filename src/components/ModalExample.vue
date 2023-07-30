@@ -6,7 +6,7 @@
             <slot name="header"/>
             <slot name="body"/>
             <slot name="footer"/>
-            <!-- <slot name="exposed" :newTitle="newTitle"></slot> -->
+            <slot name="exposed" :newTitle="newTitle"></slot>
             <!-- 
             <slot>
               <div class="center">

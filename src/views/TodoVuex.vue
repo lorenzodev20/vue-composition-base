@@ -29,22 +29,53 @@
       </li>
     </ul>
   </div>
+
+  <button @click="openModal">Crear ToDo</button>
+  <modal v-if="isOpen" @on:close="closeModal">
+    <template v-slot:header> <h2>Nueva Tarea</h2> </template>
+    <template v-slot:body>
+      <form @submit.prevent="createTodo(textValue); isOpen=false " >
+        <input type="text" name="text" id="text" v-model="textValue" />
+        <br /><br />
+        <button type="submit">Guardar Tarea</button>
+      </form>
+    </template>
+  </modal>
 </template>
 
 <script>
 import useTodo from '@/composables/useTodo'
+import useModal from '@/composables/useModal'
+import Modal from '@/components/Modal.vue'
 
 export default {
+  components: {
+    Modal
+  },
   setup () {
-    const { currentTab, toggleTodo, all, pending, completed, getTodosByTab } =
-      useTodo()
+    const {
+      currentTab,
+      toggleTodo,
+      all,
+      pending,
+      completed,
+      getTodosByTab,
+      textValue,
+      createTodo
+    } = useTodo()
+    const { isOpen, openModal, closeModal } = useModal()
     return {
       currentTab,
       toggleTodo,
       all,
       pending,
       completed,
-      getTodosByTab
+      getTodosByTab,
+      isOpen,
+      openModal,
+      closeModal,
+      textValue,
+      createTodo
     }
   }
 }
