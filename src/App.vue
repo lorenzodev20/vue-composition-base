@@ -5,7 +5,8 @@
     <router-link :to="{ name: 'counter'}"> Counter </router-link> |
     <router-link :to="{ name: 'users'}"> Usuarios </router-link> |
     <router-link :to="{ name: 'pokemon-search'}"> Pokemon </router-link> |
-    <router-link :to="{ name: 'todo-vuex'}"> Todo </router-link>
+    <router-link :to="{ name: 'todo-vuex'}"> Todo </router-link> |
+    <router-link :to="{ name: 'slots'}"> Slots </router-link>
   </nav>
   <!-- Con el Keep-Alive mantenemos el estado entre paginas -->
   <router-view v-slot="{ Component, route }">
